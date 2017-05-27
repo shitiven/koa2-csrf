@@ -14,6 +14,7 @@ import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import session from 'koa-generic-session';
 import convert from 'koa-convert';
+import csrf from 'koa2-csrf';
 
 const app = new Koa();
 // add session middleware 
