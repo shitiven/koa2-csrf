@@ -6,6 +6,11 @@
   "directories": {
     "lib": "./dist"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "options": {
     "mocha": "--harmony -R spec --require ./resources/mocha-bootload ./src/**/__tests__/**/*.js"
   },
