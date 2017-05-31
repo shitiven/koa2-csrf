@@ -35,14 +35,14 @@ class CSRF {
       throw new Error(
         'csrf middleware option ignoreMethods ' +
         'must return an array'
-      )
+      );
     }
 
     if (!this.opts.ignoreMethods instanceof Array) {
       throw new Error(
         'csrf middleware option ignorePaths ' +
         'must return an array'
-      )
+      );
     }
 
     return this.middleware;
@@ -67,7 +67,10 @@ class CSRF {
               ctx.session.secret = Token.genSecret(that.opts.secretLength);
             }
 
-            const token = Token.create(ctx.session.secret, that.opts.saltRounds);
+            const token = Token.create(
+              ctx.session.secret,
+              that.opts.saltRounds
+            );
             ctx._csrf = token;
             return token;
           }
@@ -129,7 +132,7 @@ class CSRF {
 
 export default function csrf(opts) {
   if (opts && typeof opts !== 'object') {
-    throw new Error('Csrf middleware option must return an object.')
+    throw new Error('Csrf middleware option must return an object.');
   }
   return new CSRF(opts || {});
 }
