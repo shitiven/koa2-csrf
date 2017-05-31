@@ -1,6 +1,6 @@
 {
   "name": "koa2-csrf",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CSRF tokens for Koa >= 2.x (next)",
   "main": "dist/index.js",
   "directories": {
